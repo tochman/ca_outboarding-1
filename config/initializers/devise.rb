@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require './lib/crafted'
 
 Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
@@ -23,6 +24,7 @@ Devise.setup do |config|
   config.omniauth :crafted_oauth,
                   Rails.application.credentials.crafted[:client_id],
                   Rails.application.credentials.crafted[:client_secret],
+                  'https://class.craftacademy.co',
                   scope: 'read write email profile'
 
   config.expire_all_remember_me_on_sign_out = true
