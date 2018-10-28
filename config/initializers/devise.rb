@@ -22,10 +22,12 @@ Devise.setup do |config|
                   scope: 'r_basicprofile r_emailaddress'
 
   config.omniauth :crafted_oauth,
-                  Rails.application.credentials.crafted[:client_id],
-                  Rails.application.credentials.crafted[:client_secret],
+                  # Rails.application.credentials.crafted[:client_id],
+                  # Rails.application.credentials.crafted[:client_secret],
+                  '4df7ce205351327a21cc',
+                  '6d2dd953ecd08fe1b6f88f9f73642c1a3c895ba4',
                   'https://class.craftacademy.co',
-                  scope: 'read write email profile'
+                  scope: 'openid email profile'
 
   config.expire_all_remember_me_on_sign_out = true
 
